@@ -1,0 +1,30 @@
+{
+  "name": "d-books-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page para venda de eBooks - MENTALIDADE SÊNIOR",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "netlify deploy --prod",
+    "dev": "npx live-server --port=3000 --open=/index.html"
+  },
+  "keywords": [
+    "landing-page",
+    "ebook",
+    "desenvolvedores",
+    "tecnologia",
+    "carreira"
+  ],
+  "author": "D-BOOKS",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d-books/mentalidade-senior-landing"
+  },
+  "homepage": "https://d-books.com/mentalidade-senior"
+}
