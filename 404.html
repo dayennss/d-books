@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página não encontrada - D-Books</title>
+    <meta name="description" content="A página que você está procurando não foi encontrada.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="index.html" class="nav__logo">
+                    <span class="nav__logo-icon">📚</span>
+                    <span class="nav__logo-text">D-Books</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#categorias" class="nav__link">Categorias</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#gratuitos" class="nav__link">Gratuitos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#ia" class="nav__link">IA/ML</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#contato" class="nav__link">Contato</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 404 Content -->
+    <main class="error-page">
+        <div class="container">
+            <div class="error-page__content">
+                <div class="error-page__illustration">
+                    <div class="error-page__icon">💻</div>
+                    <div class="error-page__number">404</div>
+                </div>
+                
+                <div class="error-page__text">
+                    <h1 class="error-page__title">Ops! Página não encontrada</h1>
+                    <p class="error-page__description">
+                        Parece que o e-book técnico que você está procurando não existe ou foi movido. 
+                        Que tal explorar nossa coleção de e-books de tecnologia disponíveis?
+                    </p>
+                    
+                    <div class="error-page__actions">
+                        <a href="index.html" class="btn btn--primary">
+                            <span class="btn__icon">🏠</span>
+                            Voltar ao Início
+                        </a>
+                        <a href="index.html#categorias" class="btn btn--secondary">
+                            <span class="btn__icon">📂</span>
+                            Ver Categorias
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Popular E-books -->
+    <section class="popular-ebooks">
+        <div class="container">
+            <h2 class="section__title">E-books Populares</h2>
+            <div class="ebooks__grid" id="popular-ebooks">
+                <!-- E-books populares serão carregados aqui via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+            <div class="footer__brand">
+                <div class="footer__logo">
+                    <span class="footer__logo-icon">📚</span>
+                    <span class="footer__logo-text">D-Books</span>
+                </div>
+                <p class="footer__description">
+                    Sua biblioteca digital especializada em e-books de tecnologia e programação. 
+                    Conhecimento técnico de qualidade para impulsionar sua carreira.
+                </p>
+            </div>
+                
+                <div class="footer__links">
+                    <div class="footer__group">
+                        <h3 class="footer__title">Links Rápidos</h3>
+                        <ul class="footer__list">
+                            <li><a href="index.html" class="footer__link">Início</a></li>
+                            <li><a href="index.html#categorias" class="footer__link">Categorias</a></li>
+                            <li><a href="index.html#gratuitos" class="footer__link">Gratuitos</a></li>
+                            <li><a href="index.html#ia" class="footer__link">IA/ML</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__group">
+                        <h3 class="footer__title">Suporte</h3>
+                        <ul class="footer__list">
+                            <li><a href="#" class="footer__link">Central de Ajuda</a></li>
+                            <li><a href="#" class="footer__link">Contato</a></li>
+                            <li><a href="#" class="footer__link">Política de Privacidade</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2024 TechBooks. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Carregar e-books populares na página 404
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPopularEbooks();
+        });
+        
+        function loadPopularEbooks() {
+            fetch('data/ebooks.json')
+                .then(response => response.json())
+                .then(data => {
+                    const popularEbooks = data.ebooks.filter(ebook => ebook.isFeatured);
+                    const container = document.getElementById('popular-ebooks');
+                    
+                    if (container && popularEbooks.length > 0) {
+                        container.innerHTML = popularEbooks.map(ebook => createEbookCard(ebook)).join('');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar e-books populares:', error);
+                });
+        }
+        
+        function createEbookCard(ebook) {
+            const priceHtml = ebook.isFree 
+                ? '<span class="ebook-card__price ebook-card__price--free">Gratuito</span>'
+                : ebook.originalPrice > ebook.price
+                    ? `<span class="ebook-card__price ebook-card__price--discount">R$ ${ebook.price.toFixed(2)}</span>
+                       <span class="ebook-card__original-price">R$ ${ebook.originalPrice.toFixed(2)}</span>`
+                    : `<span class="ebook-card__price">R$ ${ebook.price.toFixed(2)}</span>`;
+            
+            return `
+                <article class="ebook-card" data-category="${ebook.category}">
+                    <div class="ebook-card__image">
+                        <img src="images/${ebook.images[0]}" alt="${ebook.title}" class="ebook-card__img" 
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDMwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNTAgMTUwTDEyMCAxODBIMTgwTDE1MCAxNTBaIiBmaWxsPSIjOUNBM0FGIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3MjgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiPkUtQm9vazwvdGV4dD4KPC9zdmc+'">
+                        ${ebook.isFree ? '<span class="ebook-card__badge ebook-card__badge--free">Gratuito</span>' : ''}
+                        ${ebook.isFeatured ? '<span class="ebook-card__badge ebook-card__badge--featured">Destaque</span>' : ''}
+                    </div>
+                    <div class="ebook-card__content">
+                        <div class="ebook-card__category">${ebook.category}</div>
+                        <h3 class="ebook-card__title">${ebook.title}</h3>
+                        <p class="ebook-card__description">${ebook.description}</p>
+                        <div class="ebook-card__meta">
+                            <span class="ebook-card__pages">${ebook.pages} páginas</span>
+                            <span class="ebook-card__format">${ebook.format}</span>
+                        </div>
+                        <div class="ebook-card__rating">
+                            <div class="ebook-card__stars">
+                                ${generateStars(ebook.rating)}
+                            </div>
+                            <span class="ebook-card__reviews">(${ebook.reviews})</span>
+                        </div>
+                        <div class="ebook-card__price-container">
+                            ${priceHtml}
+                        </div>
+                        <a href="ebook.html?slug=${ebook.slug}" class="btn btn--primary ebook-card__btn">
+                            ${ebook.isFree ? 'Baixar Agora' : 'Ver Detalhes'}
+                        </a>
+                    </div>
+                </article>
+            `;
+        }
+        
+        function generateStars(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+            let stars = '';
+            
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<span class="star star--full">★</span>';
+            }
+            
+            if (hasHalfStar) {
+                stars += '<span class="star star--half">★</span>';
+            }
+            
+            const emptyStars = 5 - Math.ceil(rating);
+            for (let i = 0; i < emptyStars; i++) {
+                stars += '<span class="star star--empty">★</span>';
+            }
+            
+            return stars;
+        }
+    </script>
+</body>
+</html>

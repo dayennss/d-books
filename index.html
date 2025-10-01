@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-Books - E-books de Tecnologia e Programação</title>
+    <meta name="description" content="Descubra nossa coleção de e-books sobre programação, desenvolvimento web, IA, DevOps e cybersecurity. Conhecimento técnico de qualidade ao seu alcance.">
+    <meta name="keywords" content="e-books, programação, javascript, python, react, nodejs, docker, ia, machine learning, cybersecurity, devops">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://d-books.com/">
+    <meta property="og:title" content="D-Books - E-books de Tecnologia e Programação">
+    <meta property="og:description" content="Descubra nossa coleção de e-books sobre programação, desenvolvimento web, IA, DevOps e cybersecurity.">
+    <meta property="og:image" content="images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://d-books.com/">
+    <meta property="twitter:title" content="D-Books - E-books de Tecnologia e Programação">
+    <meta property="twitter:description" content="Descubra nossa coleção de e-books sobre programação, desenvolvimento web, IA, DevOps e cybersecurity.">
+    <meta property="twitter:image" content="images/og-image.jpg">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="index.html" class="nav__logo">
+                    <span class="nav__logo-icon">📚</span>
+                    <span class="nav__logo-text">D-Books</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link active">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#categorias" class="nav__link">Categorias</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#gratuitos" class="nav__link">Gratuitos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#ia" class="nav__link">IA/ML</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contato" class="nav__link">Contato</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__container container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    Desenvolva Sua
+                    <span class="hero__title-highlight">Maturidade Profissional</span>
+                </h1>
+                <p class="hero__description">
+                    <strong>Alcance o nível sênior</strong> com conteúdo especializado em desenvolvimento pessoal e profissional. 
+                    <span class="hero__highlight">Mais de 2.000 profissionais já transformaram suas carreiras.</span>
+                </p>
+                <div class="hero__stats">
+                    <div class="hero__stat">
+                        <span class="hero__stat-number">2.000+</span>
+                        <span class="hero__stat-label">Profissionais Transformados</span>
+                    </div>
+                    <div class="hero__stat">
+                        <span class="hero__stat-number">4.8★</span>
+                        <span class="hero__stat-label">Avaliação Média</span>
+                    </div>
+                    <div class="hero__stat">
+                        <span class="hero__stat-number">24h</span>
+                        <span class="hero__stat-label">Acesso Imediato</span>
+                    </div>
+                </div>
+                <div class="hero__actions">
+                    <a href="#ebooks" class="btn btn--primary btn--large">Explorar E-books</a>
+                    <a href="#newsletter" class="btn btn--secondary btn--large">Receber Novidades</a>
+                </div>
+                <div class="hero__guarantee">
+                    <span class="hero__guarantee-icon">✓</span>
+                    <span class="hero__guarantee-text">Garantia de 30 dias ou seu dinheiro de volta</span>
+                </div>
+            </div>
+            <div class="hero__image">
+                <div class="hero__image-placeholder">
+                    <span class="hero__image-icon">📚</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Filter -->
+    <section class="categories" id="categorias">
+        <div class="container">
+            <h2 class="section__title">Nossa Biblioteca</h2>
+            <p class="section__subtitle">Conhecimento especializado para desenvolvimento profissional</p>
+            <div class="categories__filter">
+                <button class="filter__btn active" data-category="all">Todos</button>
+                <button class="filter__btn" data-category="Desenvolvimento Pessoal">Desenvolvimento Pessoal</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured E-books -->
+    <section class="featured" id="gratuitos">
+        <div class="container">
+            <h2 class="section__title">E-book em Destaque</h2>
+            <p class="section__subtitle">Conteúdo especializado para desenvolvimento profissional</p>
+            <div class="ebooks__grid" id="featured-ebooks">
+                <!-- E-books em destaque serão carregados aqui via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- All E-books -->
+    <section class="ebooks" id="ebooks">
+        <div class="container">
+            <h2 class="section__title">Nossa Biblioteca</h2>
+            <p class="section__subtitle">Conhecimento especializado para desenvolvimento profissional</p>
+            <div class="ebooks__grid" id="all-ebooks">
+                <!-- Todos os e-books serão carregados aqui via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section__title">O Que Nossos Alunos Dizem</h2>
+            <p class="section__subtitle">Histórias reais de transformação profissional</p>
+            <div class="testimonials__grid">
+                <div class="testimonial">
+                    <div class="testimonial__content">
+                        <div class="testimonial__stars">★★★★★</div>
+                        <p class="testimonial__text">"O e-book MATURIDADE SENIOR mudou completamente minha carreira. Em 3 meses consegui uma promoção e aumento de 40%!"</p>
+                        <div class="testimonial__author">
+                            <div class="testimonial__avatar">CS</div>
+                            <div class="testimonial__info">
+                                <span class="testimonial__name">Carlos Silva</span>
+                                <span class="testimonial__role">Desenvolvedor Frontend Sênior</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial__content">
+                        <div class="testimonial__stars">★★★★★</div>
+                        <p class="testimonial__text">"Conteúdo de altíssima qualidade! O e-book MATURIDADE SENIOR me ajudou a desenvolver as habilidades necessárias para posições sênior."</p>
+                        <div class="testimonial__author">
+                            <div class="testimonial__avatar">AC</div>
+                            <div class="testimonial__info">
+                                <span class="testimonial__name">Ana Costa</span>
+                                <span class="testimonial__role">Desenvolvedora Sênior</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial__content">
+                        <div class="testimonial__stars">★★★★★</div>
+                        <p class="testimonial__text">"Excelente investimento! O material MATURIDADE SENIOR é completo e prático. Recomendo para qualquer profissional que busca crescimento."</p>
+                        <div class="testimonial__author">
+                            <div class="testimonial__avatar">RS</div>
+                            <div class="testimonial__info">
+                                <span class="testimonial__name">Roberto Santos</span>
+                                <span class="testimonial__role">Tech Lead</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" id="newsletter">
+        <div class="container">
+            <div class="newsletter__content">
+                <h2 class="newsletter__title">Receba Novidades e Ofertas</h2>
+                <p class="newsletter__description">
+                    <strong>Cadastre-se e ganhe 20% OFF</strong> no seu primeiro e-book + acesso antecipado a novos lançamentos.
+                </p>
+                <div class="newsletter__benefits">
+                    <div class="newsletter__benefit">
+                        <span class="newsletter__benefit-icon">•</span>
+                        <span class="newsletter__benefit-text">20% OFF no primeiro e-book</span>
+                    </div>
+                    <div class="newsletter__benefit">
+                        <span class="newsletter__benefit-icon">•</span>
+                        <span class="newsletter__benefit-text">Acesso antecipado a lançamentos</span>
+                    </div>
+                    <div class="newsletter__benefit">
+                        <span class="newsletter__benefit-icon">•</span>
+                        <span class="newsletter__benefit-text">Conteúdo exclusivo semanal</span>
+                    </div>
+                </div>
+                <form class="newsletter__form" id="newsletter-form">
+                    <input type="email" class="newsletter__input" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="newsletter__btn">Cadastrar</button>
+                </form>
+                <p class="newsletter__privacy">Seus dados estão seguros. Sem spam, apenas conteúdo de valor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <span class="footer__logo-icon">📚</span>
+                        <span class="footer__logo-text">D-Books</span>
+                    </div>
+                    <p class="footer__description">
+                        Sua biblioteca digital especializada em e-books de tecnologia e programação. 
+                        Conhecimento técnico de qualidade para impulsionar sua carreira.
+                    </p>
+                </div>
+                
+                <div class="footer__links">
+                    <div class="footer__group">
+                        <h3 class="footer__title">Links Rápidos</h3>
+                        <ul class="footer__list">
+                            <li><a href="index.html" class="footer__link">Início</a></li>
+                            <li><a href="#categorias" class="footer__link">Categorias</a></li>
+                            <li><a href="#gratuitos" class="footer__link">Gratuitos</a></li>
+                            <li><a href="#ia" class="footer__link">IA/ML</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__group">
+                        <h3 class="footer__title">Suporte</h3>
+                        <ul class="footer__list">
+                            <li><a href="#" class="footer__link">Central de Ajuda</a></li>
+                            <li><a href="#" class="footer__link">Contato</a></li>
+                            <li><a href="#" class="footer__link">Política de Privacidade</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2024 TechBooks. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading" id="loading">
+        <div class="loading__spinner"></div>
+        <p class="loading__text">Carregando e-books...</p>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

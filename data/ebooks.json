@@ -1,0 +1,52 @@
+{
+  "ebooks": [
+    {
+      "id": 1,
+      "title": "MATURIDADE SENIOR",
+      "slug": "maturidade-senior",
+      "price": 19.90,
+      "originalPrice": 39.90,
+      "description": "Desenvolva a maturidade profissional necessária para alcançar o nível sênior. Aprenda as habilidades técnicas e comportamentais essenciais para se destacar na carreira.",
+      "longDescription": "A maturidade profissional é fundamental para o crescimento na carreira. Neste e-book completo, você descobrirá:\n\n• Como desenvolver pensamento estratégico\n• Técnicas de liderança e mentoria\n• Comunicação eficaz com stakeholders\n• Tomada de decisões complexas\n• Gestão de projetos e prazos\n• Resolução de conflitos\n• Networking e relacionamentos profissionais\n• Desenvolvimento contínuo de habilidades\n• Ética e responsabilidade profissional\n• Planejamento de carreira a longo prazo\n\nCom exemplos práticos e casos reais, este material é essencial para profissionais que buscam evoluir para posições sênior.",
+      "images": [
+        "maturidade-senior-capa.jpg"
+      ],
+      "downloadLink": "#",
+      "category": "Desenvolvimento Pessoal",
+      "tags": ["maturidade", "senior", "carreira", "liderança", "desenvolvimento"],
+      "pages": 41,
+      "format": "PDF",
+      "language": "Português",
+      "isFree": false,
+      "isFeatured": true,
+      "rating": 4.8,
+      "reviews": 156
+    },
+    {
+      "id": 2,
+      "title": "DO JUNIOR AO PLENO",
+      "slug": "do-junior-ao-pleno",
+      "price": 19.90,
+      "originalPrice": 19.90,
+      "description": "Guia completo para evoluir de desenvolvedor júnior para pleno. Aprenda as habilidades técnicas e comportamentais necessárias para o crescimento profissional.",
+      "longDescription": "A transição de júnior para pleno é um marco importante na carreira. Neste e-book, você descobrirá:\n\n• Como desenvolver autonomia técnica\n• Técnicas de resolução de problemas\n• Comunicação eficaz com a equipe\n• Melhores práticas de código\n• Trabalho em equipe e colaboração\n• Gestão de tempo e prioridades\n• Aprendizado contínuo\n• Mentoria e conhecimento compartilhado\n• Responsabilidade e ownership\n• Planejamento de carreira\n\nCom exemplos práticos e casos reais, este material é essencial para desenvolvedores que buscam evoluir para o nível pleno.",
+      "images": [
+        "do-junior-ao-pleno-capa.jpg"
+      ],
+      "downloadLink": "#",
+      "category": "Desenvolvimento Pessoal",
+      "tags": ["junior", "pleno", "carreira", "desenvolvimento", "evolução"],
+      "pages": 41,
+      "format": "PDF",
+      "language": "Português",
+      "isFree": false,
+      "isFeatured": false,
+      "isComingSoon": true,
+      "rating": 0,
+      "reviews": 0
+    }
+  ],
+  "categories": [
+    "Desenvolvimento Pessoal"
+  ]
+}

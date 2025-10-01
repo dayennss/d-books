@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando... - D-Books</title>
+    <meta name="description" content="Carregando informações do e-book...">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="index.html" class="nav__logo">
+                    <span class="nav__logo-icon">📚</span>
+                    <span class="nav__logo-text">D-Books</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#categorias" class="nav__link">Categorias</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#gratuitos" class="nav__link">Gratuitos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#ia" class="nav__link">IA/ML</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#contato" class="nav__link">Contato</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="index.html" class="breadcrumb__link">Início</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <span class="breadcrumb__separator">/</span>
+                </li>
+                <li class="breadcrumb__item">
+                    <span class="breadcrumb__current" id="breadcrumb-category">E-book</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- E-book Details -->
+    <main class="ebook-details">
+        <div class="container">
+            <div class="ebook-details__content" id="ebook-content">
+                <!-- Conteúdo será carregado dinamicamente via JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Related E-books -->
+    <section class="related-ebooks">
+        <div class="container">
+            <h2 class="section__title">E-books Relacionados</h2>
+            <div class="ebooks__grid" id="related-ebooks">
+                <!-- E-books relacionados serão carregados aqui via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+            <div class="footer__brand">
+                <div class="footer__logo">
+                    <span class="footer__logo-icon">📚</span>
+                    <span class="footer__logo-text">D-Books</span>
+                </div>
+                <p class="footer__description">
+                    Sua biblioteca digital especializada em e-books de tecnologia e programação. 
+                    Conhecimento técnico de qualidade para impulsionar sua carreira.
+                </p>
+            </div>
+                
+                <div class="footer__links">
+                    <div class="footer__group">
+                        <h3 class="footer__title">Links Rápidos</h3>
+                        <ul class="footer__list">
+                            <li><a href="index.html" class="footer__link">Início</a></li>
+                            <li><a href="index.html#categorias" class="footer__link">Categorias</a></li>
+                            <li><a href="index.html#gratuitos" class="footer__link">Gratuitos</a></li>
+                            <li><a href="index.html#ia" class="footer__link">IA/ML</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__group">
+                        <h3 class="footer__title">Suporte</h3>
+                        <ul class="footer__list">
+                            <li><a href="#" class="footer__link">Central de Ajuda</a></li>
+                            <li><a href="#" class="footer__link">Contato</a></li>
+                            <li><a href="#" class="footer__link">Política de Privacidade</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2024 TechBooks. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading" id="loading">
+        <div class="loading__spinner"></div>
+        <p class="loading__text">Carregando e-book...</p>
+    </div>
+
+    <script src="js/ebook.js"></script>
+</body>
+</html>
